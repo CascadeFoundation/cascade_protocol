@@ -17,6 +17,8 @@ public struct MenuAdminCap has key, store {
     id: UID,
 }
 
+const EIncorrectPrice: u64 = 0;
+
 //=== Init Function ===
 
 fun init(_otw: MENU, ctx: &mut TxContext) {
@@ -42,4 +44,10 @@ public fun remove_price<T>(self: &mut Menu, _: &AdminCap) {
 
 public fun price<T>(self: &Menu): u64 {
     *self.prices.borrow(type_name::get<T>())
+}
+
+//=== Assertions ===
+
+public(package) fun assert_price_correct<T>(self: &Menu, price: u64) {
+    assert!(price == self.price<T>(), EIncorrectPrice);
 }

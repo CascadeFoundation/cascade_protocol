@@ -9,3 +9,4 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-fram
 
 [addresses]
 cascade_protocol = "0x0"
+cascade_treasury = "0x13a53b10794a7a1182068d00400c105acc578c10423ed1078e8f164412c53a14"
