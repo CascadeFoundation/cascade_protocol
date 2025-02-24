@@ -1,0 +1,11 @@
+[package]
+name = "CascadeProtocol"
+edition = "2024.beta"
+license = "Cascade DOL 1.0"
+authors = ["Cascade Foundation (dos@cascade.foundation)"]
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet", override = true }
+
+[addresses]
+cascade_protocol = "0x0"
