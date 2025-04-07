@@ -17,7 +17,6 @@ public struct MenuAdminCap has key, store {
     id: UID,
 }
 
-const EIncorrectPrice: u64 = 0;
 const EIncorrectPaymentValue: u64 = 1;
 
 //=== Init Function ===
