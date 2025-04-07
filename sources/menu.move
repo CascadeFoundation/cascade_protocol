@@ -18,6 +18,7 @@ public struct MenuAdminCap has key, store {
 }
 
 const EIncorrectPrice: u64 = 0;
+const EIncorrectPaymentValue: u64 = 1;
 
 //=== Init Function ===
 
@@ -48,6 +49,10 @@ public fun price<T>(self: &Menu): u64 {
 
 //=== Assertions ===
 
-public(package) fun assert_price_correct<T>(self: &Menu, price: u64) {
-    assert!(price == self.price<T>(), EIncorrectPrice);
+public(package) fun assert_correct_payment_value<T>(
+    self: &Menu,
+    quantity: u64,
+    payment_value: u64,
+) {
+    assert!(quantity * self.price<T>() == payment_value, EIncorrectPaymentValue);
 }
